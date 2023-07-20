@@ -1,11 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container">
 <h1>Event List</h1>
-<ul class="list-group">
+<div class="row">
 {% for event in events %}
-    <li class="list-group-item">
-        <a class="link-offset-2 link-underline link-underline-opacity-0" href="/events/{{ event }}">{{ event }}</a></li>
+    <div class="col-4">
+    <div class="card my-2" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ event.title }}</h5>
+{#    <p class="card-text"></p>#}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ event.category }}</li>
+    <li class="list-group-item">{{ event.start_date }}</li>
+    <li class="list-group-item">{{ event.end_date }}</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+</div>
 {% endfor %}
-</ul>
+</div>
+</div>
 {% endblock %}
