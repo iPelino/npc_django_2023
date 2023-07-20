@@ -3,7 +3,7 @@ from events.models import Event, Category
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ["title", "start_date", "end_date"]
+    list_display = ["title", "start_date", "end_date", "image"]
     search_fields = ["start_date"]
     list_filter = ["category__name"]
 

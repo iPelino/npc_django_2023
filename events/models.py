@@ -16,6 +16,7 @@ class Category(models.Model):
 class Event(models.Model):
     title = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='events/', null=True)
     venue = models.CharField(max_length=100)
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()

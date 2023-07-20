@@ -23,5 +23,6 @@ def contact(request):
             message = form.cleaned_data["message"]
             # storing the data in Contact Model
             Contact.objects.create(name=name, email=email, message=message)
-
+    else:
+        form = ContactForm()
     return render(request, 'core/contact.html', {'form': form})

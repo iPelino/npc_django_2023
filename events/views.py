@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+from events.forms import EventForm
 from events.models import Event
 
 
@@ -16,3 +17,8 @@ def event_detail(request, name):
         return render(request, 'events/event_details.html', {'name': name})
     else:
         return render(request, 'events/event_details.html', {'error': 'Event not found'})
+
+
+def add_event(request):
+    form = EventForm()
+    return render(request, 'events/add_event.html', {'form': form})
