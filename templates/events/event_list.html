@@ -1,18 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>All Events</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
 <h1>Event List</h1>
-<ul>
+<ul class="list-group">
 {% for event in events %}
-    <li><a href="/events/{{ event }}">{{ event }}</a></li>
+    <li class="list-group-item">
+        <a class="link-offset-2 link-underline link-underline-opacity-0" href="/events/{{ event }}">{{ event }}</a></li>
 {% endfor %}
 </ul>
-</body>
-</html>
+{% endblock %}
