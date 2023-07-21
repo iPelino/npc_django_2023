@@ -6,7 +6,7 @@ Eventify also will have a dashboard page, accessible only by registered users wh
 
 1. Use your own design and styling of your choice
 2. Try to add any feature that you think will be needed (within the timeframe given)
-3. Note: This is a group project (No more than two students)
+3. Note: This is a group project (No more than three students) and don't forget to add your names and registration numbers to this read me file.
 
 
 
