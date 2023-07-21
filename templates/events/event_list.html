@@ -5,9 +5,9 @@
 <h1>Event List</h1>
 <div class="row">
 {% for event in events %}
-    <div class="col-4">
-    <div class="card my-2" style="width: 18rem;">
-  <img src="{{ event.image.url }}" class="card-img-top" alt="...">
+    <div class="col-3 mx-2">
+    <div class="card my-2 " style="width: 18rem;">
+  <img src="{{ event.image.url }}" class="card-img-top" alt="..." style="max-height: 250px">
   <div class="card-body">
     <h5 class="card-title">{{ event.title }}</h5>
 {#    <p class="card-text"></p>#}
@@ -18,8 +18,7 @@
     <li class="list-group-item">{{ event.end_date }}</li>
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
+    <a href="{% url 'event_detail' event.id %}" class="btn btn-secondary">Explore</a>
   </div>
 </div>
 </div>

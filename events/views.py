@@ -10,13 +10,17 @@ def events(request):
     return render(request, 'events/event_list.html', {'events': events})
 
 
-def event_detail(request, name):
-    events = ['PyCon', 'DjangoCon', 'PyData', 'EuroPython', 'SciPy']
+def event_detail(request, pk):
+    # events = ['PyCon', 'DjangoCon', 'PyData', 'EuroPython', 'SciPy']
     # lowered_events = [event.lower() for event in events]
-    if name in events:
-        return render(request, 'events/event_details.html', {'name': name})
-    else:
-        return render(request, 'events/event_details.html', {'error': 'Event not found'})
+    try:
+        event = Event.objects.get(id=pk)  # select * from events_event where id = 1
+        return render(request, 'events/event_details.html', {'event': event})
+    except Event.DoesNotExist:
+        return render(request, '404.html')
+
+
+
 
 
 def add_event(request):
